@@ -1,19 +1,21 @@
 import DButton from "discourse/components/d-button";
 import { i18n } from "discourse-i18n";
+import { openComposer } from "discourse/lib/composer";
 
 <template>
-  {{#if this.canCreateTopic}}
+  {{#if this.currentUser.can_create_topic}}
     <DButton
-      @action={{this.action}}
       @icon="plus"
-      @disabled={{this.disabled}}
-      @label={{this.label}}
-      @tooltip={{if this.disabled (i18n "topic.create_disabled_category")}}
+      @label={{i18n "topic.create"}}
+      @action={{this.openComposer}}
+      class="btn-primary create-topic"
       id="create-topic"
-      class={{this.btnClass}}
-      insp-label="Create New Topic"
-      data-transaction-name="Create New Topic"
-      name="Create New Topic"
     />
   {{/if}}
 </template>
+
+export default {
+  openComposer() {
+    openComposer();
+  }
+};
