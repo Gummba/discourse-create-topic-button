@@ -1,22 +1,13 @@
-<script>
-  import Component from "@glimmer/component";
-  import { action } from "@ember/object";
-  import { openComposer } from "discourse/lib/composer";
-
-  export default class CreateTopicButtonConnector extends Component {
-    @action
-    openComposer() {
-      openComposer();
-    }
-  }
-</script>
+import DButton from "discourse/components/d-button";
+import { i18n } from "discourse-i18n";
+import { action } from "discourse/lib/helpers";
 
 <template>
   {{#if this.currentUser.can_create_topic}}
     <DButton
       @icon="plus"
       @label={{i18n "topic.create"}}
-      {{on "click" this.openComposer}}
+      {{action "createTopic"}}
       class="btn-primary create-topic"
       id="create-topic"
     />
