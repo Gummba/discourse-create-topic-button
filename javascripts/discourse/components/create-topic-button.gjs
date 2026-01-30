@@ -1,6 +1,7 @@
 import DButton from "discourse/components/d-button";
 import DButtonTooltip from "discourse/components/d-button-tooltip";
 import DTooltip from "discourse/components/d-tooltip";
+import { i18n } from "discourse-i18n";
 
 <template>
   {{#if this.canCreateTopic}}
