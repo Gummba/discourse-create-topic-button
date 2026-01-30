@@ -1,3 +1,7 @@
+import DButton from "discourse/components/d-button";
+import DButtonTooltip from "discourse/components/d-button-tooltip";
+import DTooltip from "discourse/components/d-tooltip";
+
 <template>
   {{#if this.canCreateTopic}}
     <DButtonTooltip>
