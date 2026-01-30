@@ -1,3 +1,7 @@
+import Component from "@glimmer/component";
+
+export default class CreateTopicButton extends Component {}
+
 {{#if this.canCreateTopic}}
   <DButtonTooltip>
     <:button>
